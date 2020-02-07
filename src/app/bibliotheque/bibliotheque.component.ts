@@ -28,14 +28,22 @@ export class BibliothequeComponent implements OnInit {
     console.log('fin list livre')
   }
 
-  deleteLivre(numero: number) {
+  deleteLivre(livre : Livre) {
     {
-      this.livreService.deleteLivre(numero).subscribe(
+      this.livreService.deleteLivre(livre.numero).subscribe(
         resultat => {
           console.log(resultat)
-          this.livreService.getLivre()
+          this.listeLivre()
 
         })
     }
   }
-}
+  ajouterLivre(numero:number, titre:string, pages:[string]){
+    
+      this.livreService.ajouterLivre(numero,titre,pages).subscribe( 
+    ajouter =>{
+      console.log(ajouter)
+      this.listeLivre()
+      })
+    }
+  }

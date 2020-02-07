@@ -38,6 +38,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AddLivreComponent } from './add-livre/add-livre.component';
 import { BibliothequeComponent } from './bibliotheque/bibliotheque.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatAutocompleteModule,
     MatDatepickerModule,
+    FormsModule,
+    CommonModule,
     MatFormFieldModule,
     MatRadioModule,
     MatSelectModule,

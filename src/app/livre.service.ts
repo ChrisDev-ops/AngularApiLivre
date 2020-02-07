@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LivreService {
-  livreUrl = "http://localhost:5000/livres"
+  livreUrl = "http://localhost:5000/livres/"
 
   constructor(
    private  http: HttpClient) { }
@@ -15,12 +15,15 @@ export class LivreService {
   getLivre() : Observable<Livre[]> {
     return this.http.get<Livre[]>(this.livreUrl)
     }
-  addLivre(titre:string,numero:number,pages:string): Observable<Livre>{
-    return this.http.post<Livre>(this.livreUrl, { "titre":titre, "numero":numero,"pages":pages})
+
+    ajouterLivre(numero:number,titre:string,pages:[string]): Observable<Livre>{
+    return this.http.post<Livre>(this.livreUrl, {"numero":numero, "titre":titre, "pages":pages})
   }
+
   deleteLivre(numero:number): Observable<Livre> {
-    return this.http.delete<Livre>(this.livreUrl+"/"+numero)
+    return this.http.delete<Livre>(this.livreUrl+numero)
   }
+
   update(titre:string,numero:number,pages:string): Observable<Livre> {
     return this.http.put<Livre>(this.livreUrl, { "titre":titre, "numero":numero,"pages":pages})
   }
