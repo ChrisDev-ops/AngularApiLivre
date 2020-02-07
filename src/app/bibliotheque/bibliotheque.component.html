@@ -18,7 +18,7 @@
     <mat-card *ngFor="let livre of livres">
       <mat-card-title>{{livre.titre}}</mat-card-title>
       <mat-card-subtitle>({{livre.numero}})</mat-card-subtitle>
-      <mat-card-content>{{livre.pages}}</mat-card-content>
+      <mat-card-content><ul>{{livre.pages}}</ul></mat-card-content>
       <button (click)="deleteLivre(livre)"><mat-icon>delete</mat-icon></button>
     </mat-card>
     </mat-list>
