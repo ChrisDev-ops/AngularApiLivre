@@ -7,7 +7,7 @@
         <input type="text" id="titre" ngModel name="titre" #titre="ngModel" matInput placeholder="Titre du livre" required>
     </mat-form-field>
     <mat-form-field>
-      <input id="pages" ngModel name="pages" #pages="ngModel" matInput placeholder="Liste des pages" required>
+      <input id="pages" ngModel name="pages" #pages="ngModel" matInput placeholder="Titre de la  page" required>
   </mat-form-field>
   <br>
   <input type="submit" [disabled]="!idForm.valid" value="Ajouter"
@@ -20,5 +20,6 @@
       <mat-card-subtitle>({{livre.numero}})</mat-card-subtitle>
       <mat-card-content><ul>{{livre.pages}}</ul></mat-card-content>
       <button (click)="deleteLivre(livre)"><mat-icon>delete</mat-icon></button>
+      <a routerLink="add-livre"><button (click)="modifier(livre)"><mat-icon>build</mat-icon></button></a>
     </mat-card>
     </mat-list>

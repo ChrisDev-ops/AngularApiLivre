@@ -1,0 +1,16 @@
+<mat-card>
+    <form #idForm="ngForm">
+      <mat-form-field>
+          <input id="numero" ngModel name="numero" #num="ngModel" matInput placeholder="Numero du livre" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" id="titre" ngModel name="titre" #titre="ngModel" matInput placeholder="Titre du livre" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input id="pages" ngModel name="pages" #pages="ngModel" matInput placeholder="Liste des pages" required>
+  </mat-form-field>
+  <br>
+  <input type="submit" [disabled]="!idForm.valid" value="Modifier"
+    (click)=" update(idForm.value.numero, idForm.value.titre, idForm.value.pages); idForm.reset()"> 
+    </form>
+</mat-card>
